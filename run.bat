@@ -1,6 +1,7 @@
 @echo off
 echo ----------------------
-set str="AAA BBB CCC" 
+set /p te= <te.txt
+set str="%te%" 
 :STR_VISTOR
 for /f "tokens=1,*" %%a in (%str%) do ( 
 echo %%a
