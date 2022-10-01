@@ -1,3 +1,6 @@
-for /r %2 %%a in (*.txt) do type "%%a" | find "%1" /v >>"%%a.tmp"
-for /r %2 %%a in (*.txt) do del /q "%%a" && move /y "%%a.tmp" "%%a" >nul
-rem for /f "delims=\n\ tokens=1,*" %%b in (%temab%) do (echo %%b>>%temab%)
+dir /b /s /a:-d *.txt >ghl.txt
+setlocal enabledelayedexpansion
+for /f   %%i in (ghl.txt)  do [
+for /f "delims=\n\ tokens=1,*" %%b in (%%i) do (echo %%b>>%%i)
+]
+
