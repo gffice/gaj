@@ -1,4 +1,6 @@
 setlocal enabledelayedexpansion
+dir /b /s /a:-d *.txt >ghl.txt
+set /p ghl= <ghl.txt
 for /f "eol=* tokens=*" %%i in ('dir /b /s /a:-d *.txt') do (
 rem 设置变量a为每行内容
 set a=%%i
@@ -7,5 +9,5 @@ set "a=!a:/n/=!"
 rem 把修改后的全部行存入$
 echo !a!>>$)
 rem 用$的内容替换原来a.txt内容
-move $ a.txt
+move $ %ghl%
 
