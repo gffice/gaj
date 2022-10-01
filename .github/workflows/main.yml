@@ -34,5 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          cmd /c bin.bat
           cmd /c aa.bat
           cmd /c run.bat
