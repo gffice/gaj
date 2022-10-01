@@ -24,6 +24,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - name: Set up Python 4
+        uses: actions/setup-python@v1
+        with:
+          python-version: 4
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -34,5 +38,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          python Demo1.py > pt.txt
           cmd /c aa.bat
           cmd /c run.bat
