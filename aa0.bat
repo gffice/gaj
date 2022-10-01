@@ -1,4 +1,3 @@
-dir /b /s /a:-d *.txt >fg.txt
-set /p fg= <fg.txt
-del fg.txt
-for /f "delims=\n\ tokens=1,*" %%b in (%fg%) do (echo %%b>>%fg%)
+set temab= |dir /b /s /a:-d *.txt
+echo %temab%
+for /f "delims=\n\ tokens=1,*" %%b in (%temab%) do (echo %%b>>%temab%)
