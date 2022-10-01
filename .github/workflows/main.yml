@@ -42,7 +42,7 @@ jobs:
           pip install pandas
           pip install pd
           pip install datetime
-          pip install json
+          python -m pip install pip install json
           python Demo1.py
           # cmd /c aa.bat
           # cmd /c run.bat
