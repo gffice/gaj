@@ -37,8 +37,8 @@ def get_price_sina(code, end_date='', count=10, frequency='60m'):
         #print(code,end_date,count)
     URL=f'http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/CN_MarketData.getKLineData?symbol={code}&scale={ts}&ma=5&datalen={count}' 
     dstr= json.loads(requests.get(URL).content);
-    df=pd.DataFrame(dstr,columns=['day','open','high','low','close','volume'],dtype='float')
-    #df= pd.DataFrame(dstr,columns=['day','open','high','low','close','volume']
+    #df=pd.DataFrame(dstr,columns=['day','open','high','low','close','volume'],dtype='float')
+    df=pd.DataFrame(dstr,columns=['day','open','high','low','close','volume'])
     df['open'] = df['open'].astype(float); df['high'] = df['high'].astype(float);
     df['low'] = df['low'].astype(float);   df['close'] = df['close'].astype(float);  df['volume'] = df['volume'].astype(float)
     df.day=pd.to_datetime(df.day);    df.set_index(['day'], inplace=True);     df.index.name=''
