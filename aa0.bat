@@ -1,7 +1,7 @@
 dir /b /s /a:-d *.txt >ghl.txt
-setlocal enabledelayedexpansion
-for /f   %%i in (ghl.txt)  do (
-set dit= %%i
+
+for /f %%i in (ghl.txt)  do (
+set dit=%%i
 goto 4
 :5
 )
