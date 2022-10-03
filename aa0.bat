@@ -1,6 +1,5 @@
-dir /b /s /a:-d *.txt >ghl.txt
-
-for /f %%i in (ghl.txt)  do (
+dir /b /s /a:-d *.txt >$
+for /f %%i in ($)  do (
 set dit=%%i
 goto 4
 :5
