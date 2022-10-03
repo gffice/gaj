@@ -1,3 +1,4 @@
+setlocal enabledelayedexpansion
 dir /b /s /a:-d *.txt >$
 for /f "" %%i in ($) do (
 set dit=%%i
